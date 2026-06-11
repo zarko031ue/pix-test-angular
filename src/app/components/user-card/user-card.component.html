@@ -1,0 +1,22 @@
+<app-card [elevated]="true">
+  <div class="user">
+    @if (avatarUrl) {
+      <img [src]="avatarUrl" [alt]="name" class="user-avatar" />
+    } @else {
+      <div class="user-avatar user-avatar-fallback">{{ name.charAt(0).toUpperCase() }}</div>
+    }
+    <div class="user-body">
+      <div class="user-head">
+        <h3 class="user-name">{{ name }}</h3>
+        @if (isOnline) {
+          <span class="user-online">Online</span>
+        }
+      </div>
+      <p class="user-role">{{ role }}</p>
+      @if (email) {
+        <p class="user-email">{{ email }}</p>
+      }
+    </div>
+    <app-button variant="outline" size="sm" (click)="messageUser.emit()">Message</app-button>
+  </div>
+</app-card>

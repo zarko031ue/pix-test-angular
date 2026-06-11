@@ -1,0 +1,16 @@
+<div class="input-wrap">
+  @if (label) {
+    <label class="input-label">{{ label }}</label>
+  }
+  <input
+    class="input-control"
+    [class.input-error]="!!error"
+    [type]="type"
+    [placeholder]="placeholder"
+    [value]="value"
+    [disabled]="disabled"
+  />
+  @if (error) {
+    <span class="input-error-text">{{ error }}</span>
+  }
+</div>

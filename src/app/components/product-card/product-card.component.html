@@ -1,0 +1,13 @@
+<app-card [elevated]="true">
+  <div class="product">
+    <img [src]="imageUrl" [alt]="title" class="product-image" />
+    <h3 class="product-title">{{ title }}</h3>
+    <div class="product-meta">
+      <span>&star; {{ rating.toFixed(1) }}</span>
+      <span class="product-price">{{ price | number: "1.2-2" }}</span>
+    </div>
+    <app-button [disabled]="!inStock" (click)="addToCart.emit()">
+      {{ inStock ? "Add to Cart" : "Out of Stock" }}
+    </app-button>
+  </div>
+</app-card>

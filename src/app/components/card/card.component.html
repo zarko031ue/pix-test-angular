@@ -1,0 +1,15 @@
+<article class="card" [class.card-elevated]="elevated">
+  @if (title || description) {
+    <header class="card-header">
+      @if (title) {
+        <h3 class="card-title">{{ title }}</h3>
+      }
+      @if (description) {
+        <p class="card-description">{{ description }}</p>
+      }
+    </header>
+  }
+  <div class="card-body">
+    <ng-content></ng-content>
+  </div>
+</article>

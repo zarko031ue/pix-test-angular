@@ -1,0 +1,19 @@
+<app-card [elevated]="highlighted" [title]="tier" [description]="description ?? undefined">
+  <div class="pricing">
+    <div class="pricing-amount">
+      <span class="pricing-price">{{ price }}</span>
+      <span class="pricing-period">/ {{ period }}</span>
+    </div>
+    <ul class="pricing-features">
+      @for (feature of features; track feature) {
+        <li>&check; {{ feature }}</li>
+      }
+    </ul>
+    <app-button
+      [variant]="highlighted ? 'primary' : 'outline'"
+      (click)="selectTier.emit()"
+    >
+      {{ ctaLabel }}
+    </app-button>
+  </div>
+</app-card>
