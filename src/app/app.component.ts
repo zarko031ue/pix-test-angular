@@ -8,8 +8,8 @@ import { ProductCardComponent } from "./components/product-card/product-card.com
   imports: [ButtonComponent, ProductCardComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <main class="app-shell">
-      <h1>Pix Test Angular</h1>
+    <main class="flex min-h-screen flex-col items-center justify-center gap-6 p-6">
+      <h1 class="text-2xl text-ink">Pix Test Angular</h1>
       <app-button variant="primary">Click me</app-button>
       <app-product-card
         title="Sample Product"
@@ -18,22 +18,5 @@ import { ProductCardComponent } from "./components/product-card/product-card.com
       ></app-product-card>
     </main>
   `,
-  styles: [
-    `
-      .app-shell {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: var(--spacing-lg);
-        padding: var(--spacing-lg);
-      }
-      h1 {
-        font-size: var(--font-size-xl);
-        color: var(--text-primary);
-      }
-    `,
-  ],
 })
 export class AppComponent {}

@@ -1,20 +1,22 @@
 <app-card [elevated]="true">
-  <div class="user">
+  <div class="flex w-80 items-center gap-4">
     @if (avatarUrl) {
-      <img [src]="avatarUrl" [alt]="name" class="user-avatar" />
+      <img [src]="avatarUrl" [alt]="name" class="h-12 w-12 rounded-full bg-surface object-cover" />
     } @else {
-      <div class="user-avatar user-avatar-fallback">{{ name.charAt(0).toUpperCase() }}</div>
+      <div class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-surface font-bold text-ink-soft">
+        {{ name.charAt(0).toUpperCase() }}
+      </div>
     }
-    <div class="user-body">
-      <div class="user-head">
-        <h3 class="user-name">{{ name }}</h3>
+    <div class="flex flex-1 flex-col gap-1">
+      <div class="flex items-center gap-2">
+        <h3 class="m-0 text-lg font-semibold text-ink">{{ name }}</h3>
         @if (isOnline) {
-          <span class="user-online">Online</span>
+          <span class="text-xs font-semibold text-success">Online</span>
         }
       </div>
-      <p class="user-role">{{ role }}</p>
+      <p class="m-0 text-xs text-ink-soft">{{ role }}</p>
       @if (email) {
-        <p class="user-email">{{ email }}</p>
+        <p class="m-0 text-xs text-ink-faint">{{ email }}</p>
       }
     </div>
     <app-button variant="outline" size="sm" (click)="messageUser.emit()">Message</app-button>

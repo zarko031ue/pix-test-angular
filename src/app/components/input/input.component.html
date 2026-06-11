@@ -1,16 +1,16 @@
-<div class="input-wrap">
+<div class="flex flex-col gap-1">
   @if (label) {
-    <label class="input-label">{{ label }}</label>
+    <label class="text-xs font-medium text-ink">{{ label }}</label>
   }
   <input
-    class="input-control"
-    [class.input-error]="!!error"
+    class="h-10 rounded-md border bg-surface-raised px-4 text-sm text-ink focus:outline focus:outline-2 focus:outline-offset-1 focus:outline-brand"
+    [ngClass]="error ? 'border-danger' : 'border-line'"
     [type]="type"
     [placeholder]="placeholder"
     [value]="value"
     [disabled]="disabled"
   />
   @if (error) {
-    <span class="input-error-text">{{ error }}</span>
+    <span class="text-xs text-danger">{{ error }}</span>
   }
 </div>

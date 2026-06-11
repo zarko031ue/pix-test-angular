@@ -1,10 +1,10 @@
 <app-card [elevated]="true">
-  <div class="product">
-    <img [src]="imageUrl" [alt]="title" class="product-image" />
-    <h3 class="product-title">{{ title }}</h3>
-    <div class="product-meta">
+  <div class="flex w-[280px] flex-col gap-2">
+    <img [src]="imageUrl" [alt]="title" class="h-40 w-full rounded-md object-cover" />
+    <h3 class="m-0 text-lg font-semibold text-ink">{{ title }}</h3>
+    <div class="flex items-center justify-between text-sm text-ink-soft">
       <span>&star; {{ rating.toFixed(1) }}</span>
-      <span class="product-price">{{ price | number: "1.2-2" }}</span>
+      <span class="font-bold text-ink">{{ price | number: "1.2-2" }}</span>
     </div>
     <app-button [disabled]="!inStock" (click)="addToCart.emit()">
       {{ inStock ? "Add to Cart" : "Out of Stock" }}

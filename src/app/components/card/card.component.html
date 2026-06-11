@@ -1,15 +1,18 @@
-<article class="card" [class.card-elevated]="elevated">
+<article
+  class="rounded-lg border border-line p-4"
+  [ngClass]="elevated ? 'bg-surface-raised shadow-[0_4px_12px_rgba(0,0,0,0.06)]' : 'bg-surface'"
+>
   @if (title || description) {
-    <header class="card-header">
+    <header class="mb-4 flex flex-col gap-1">
       @if (title) {
-        <h3 class="card-title">{{ title }}</h3>
+        <h3 class="m-0 text-lg font-semibold text-ink">{{ title }}</h3>
       }
       @if (description) {
-        <p class="card-description">{{ description }}</p>
+        <p class="m-0 text-xs text-ink-soft">{{ description }}</p>
       }
     </header>
   }
-  <div class="card-body">
+  <div>
     <ng-content></ng-content>
   </div>
 </article>
