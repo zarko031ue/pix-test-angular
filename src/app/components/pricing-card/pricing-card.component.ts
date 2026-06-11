@@ -9,7 +9,6 @@ import { CardComponent } from "../card/card.component";
   imports: [CommonModule, ButtonComponent, CardComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: "./pricing-card.component.html",
-  styleUrls: ["./pricing-card.component.css"],
 })
 export class PricingCardComponent {
   @Input({ required: true }) tier!: string;

@@ -8,7 +8,6 @@ import { FormsModule } from "@angular/forms";
   imports: [CommonModule, FormsModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: "./input.component.html",
-  styleUrls: ["./input.component.css"],
 })
 export class InputComponent {
   @Input() label: string | null = null;

@@ -1,10 +1,10 @@
-<app-card [elevated]="highlighted" [title]="tier" [description]="description ?? undefined">
-  <div class="pricing">
-    <div class="pricing-amount">
-      <span class="pricing-price">{{ price }}</span>
-      <span class="pricing-period">/ {{ period }}</span>
+<app-card [elevated]="highlighted" [title]="tier" [description]="description ?? null">
+  <div class="flex w-[280px] flex-col gap-4">
+    <div class="flex items-baseline gap-1">
+      <span class="text-2xl font-bold text-ink">{{ price }}</span>
+      <span class="text-xs text-ink-soft">/ {{ period }}</span>
     </div>
-    <ul class="pricing-features">
+    <ul class="m-0 flex list-none flex-col gap-2 p-0 text-sm text-ink">
       @for (feature of features; track feature) {
         <li>&check; {{ feature }}</li>
       }
